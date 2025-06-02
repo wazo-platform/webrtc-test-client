@@ -1,0 +1,29 @@
+{
+  "name": "node-webrtc-test-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "build": "tsc && webpack",
+    "start": "tsc && webpack serve --mode development"
+  },
+  "author": "",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "sip.js": "^0.21.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "html-webpack-plugin": "^5.6.3",
+    "source-map-loader": "^5.0.0",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}

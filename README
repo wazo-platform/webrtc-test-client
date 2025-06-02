@@ -1,0 +1,5 @@
+sip.js based webrtc codec test page
+-----------------------------------
+
+The aim of this project is to allow  verification of codecs used by a WebRTC endpoint with a very simple web client.
+
