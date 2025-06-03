@@ -2,12 +2,13 @@
 
 import { Inviter, Session, SessionState, UserAgent, Registerer, Web } from "sip.js";
 
-const SIP_USER_AGENT: string = 'Wazo WebRTC Test';
+const SIP_USER_AGENT: string = 'Wazo WebRTC Codec Test';
 
 const SIP_USER_ID: string = "sipUser";
 const SIP_PWD_ID: string = "sipPassword";
 const SIP_SERVER_HOST_ID: string = "sipServerHost";
 const SIP_DOMAIN_ID: string = "sipDomain";
+const CALL_DST_ID: string = "callDestination";
 const CODEC_INCOMING_ID: string = "incoming";
 const CODEC_OUTGOING_ID: string = "outgoing";
 const STATUS_ID: string = "status";
@@ -134,4 +135,7 @@ function call(dst: String): void {
 }
 
 const callBtn = document.getElementById(CALL_BTN_ID);
-callBtn.addEventListener('click', (e: Event) => call('*10'));
+callBtn.addEventListener('click', (e: Event) => {
+    const dst = (<HTMLInputElement>document.getElementById(CALL_DST_ID)).value as string;
+    call(dst);
+});
