@@ -44,13 +44,17 @@ function updatePage(id: string, status: string, append?: boolean): void {
         append = true;
     }
 
-    const call: Element = document.getElementById(id);
-    console.log('Append: ', append, call.hasChildNodes(), JSON.stringify(status));
-    if (!call.hasChildNodes() || append == true) {
+    const el: Element = document.getElementById(id);
+
+    console.log('Append: ', append, el.hasChildNodes(), JSON.stringify(status));
+    if (!el.hasChildNodes() || append == true) {
         const p: Element = document.createElement("p");
         p.textContent = status;
-        call?.appendChild(p);
+        el?.appendChild(p);
         console.log('Updating page: ', id, status);
+        if (el.checkVisibility() == false) {
+            el.classList.toggle("visible");
+        }
     }
 }
 
